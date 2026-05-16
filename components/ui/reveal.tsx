@@ -1,6 +1,12 @@
 "use client";
 
-import { useRef, type ReactNode, useLayoutEffect, useState } from "react";
+import {
+  createElement,
+  useRef,
+  useState,
+  useLayoutEffect,
+  type ReactNode,
+} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
@@ -9,9 +15,25 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+type RevealTag =
+  | "div"
+  | "section"
+  | "article"
+  | "header"
+  | "footer"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "p"
+  | "span"
+  | "li";
+
 type RevealProps = {
   children: ReactNode;
-  as?: keyof JSX.IntrinsicElements;
+  as?: RevealTag;
   className?: string;
   delay?: number;
   y?: number;
@@ -32,7 +54,6 @@ export function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [mounted, setMounted] = useState(false);
-  const Tag = as as keyof JSX.IntrinsicElements;
 
   useLayoutEffect(() => {
     setMounted(true);
@@ -69,14 +90,13 @@ export function Reveal({
     return () => ctx.revert();
   }, [delay, duration, start, once, y]);
 
-  return (
-    // @ts-expect-error — dynamic tag
-    <Tag
-      ref={ref}
-      className={cn(className)}
-      style={mounted ? undefined : { opacity: 0 }}
-    >
-      {children}
-    </Tag>
+  return createElement(
+    as,
+    {
+      ref,
+      className: cn(className),
+      style: mounted ? undefined : { opacity: 0 },
+    },
+    children
   );
 }
