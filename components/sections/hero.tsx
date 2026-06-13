@@ -76,15 +76,16 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50/60 px-3 py-1 text-xs font-medium text-brand-700 dark:border-brand-300/20 dark:bg-brand-500/10 dark:text-brand-300"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            Trusted by 500+ Etsy shops worldwide
+            100+ Etsy Sellers Helped
           </motion.span>
 
           <SplitWords
             as="h1"
             className="mt-6 font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl"
             segments={[
-              { text: "Rank Higher on Etsy &" },
-              { text: "Grow Your Sales", className: "gradient-text" },
+              { text: "Scale Your Etsy Shop to" },
+              { text: "$10k+/Month", className: "gradient-text" },
+              { text: "Without Daily Management" },
             ]}
             delay={0.2}
             stagger={0.055}
@@ -97,8 +98,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto mt-5 max-w-xl text-base text-muted md:text-lg"
           >
-            We optimize your Etsy listings, keywords, and ads so your products
-            get discovered, ranked, and converted — month after month.
+            I handle Etsy SEO, listing optimization, product research, and full
+            shop management. Start with a $17 listing audit or let me run your
+            entire shop.
           </motion.p>
 
           <motion.div
@@ -109,19 +111,19 @@ export function Hero() {
           >
             <Magnetic>
               <a
-                href="#cta"
+                href="#pricing"
                 className="group inline-flex items-center gap-2 rounded-full bg-warm-grad px-6 py-3 text-sm font-medium text-white shadow-glow transition hover:brightness-110"
               >
-                Get Free SEO Audit
+                See Packages &amp; Pricing
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
             </Magnetic>
             <a
-              href="#results"
+              href="#cta"
               className="group inline-flex items-center gap-2 rounded-full border border-default bg-card px-6 py-3 text-sm font-medium transition hover:bg-cream-100 dark:hover:bg-charcoal-800"
             >
               <Play className="h-4 w-4 text-brand-600" />
-              View Results
+              Get Free Audit First
             </a>
           </motion.div>
 

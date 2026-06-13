@@ -6,3 +6,6 @@ out
 .DS_Store
 *.log
 .vscode
+
+# Source content docs (already extracted into code)
+*.docx

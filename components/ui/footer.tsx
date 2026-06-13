@@ -49,8 +49,10 @@ export function Footer() {
           <div>
             <h4 className="font-display text-sm font-semibold">Company</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted">
-              <li><a href="#results" className="hover:text-brand-600">Results</a></li>
+              <li><a href="#case-studies" className="hover:text-brand-600">Case Studies</a></li>
               <li><a href="#process" className="hover:text-brand-600">Process</a></li>
+              <li><a href="#add-ons" className="hover:text-brand-600">Add-Ons</a></li>
+              <li><a href="#pricing" className="hover:text-brand-600">Pricing</a></li>
               <li><a href="#testimonials" className="hover:text-brand-600">Testimonials</a></li>
               <li><a href="#cta" className="hover:text-brand-600">Contact</a></li>
             </ul>
